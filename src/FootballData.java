@@ -296,63 +296,552 @@ public class FootballData {
         leagues.add(new League("Ligue 1", 1933, "France", 20, ligue1Clubs));
     }
 
+    // -----------------------------
+    // Helper factories for missing clubs (return 10 real-ish players per club)
+    // -----------------------------
+
     private Player[] createLaLigaPlayers(String club) {
-        return new Player[]{
-                new Player("Star Player 1", 1, "Spain", "Forward", 20, 100, "Key player for " + club),
-                new Player("Star Player 2", 2, "Spain", "Midfielder", 15, 120, "Creative force for " + club),
-                new Player("Star Player 3", 3, "Spain", "Defender", 5, 150, "Reliable defender for " + club),
-                new Player("Star Player 4", 4, "Spain", "Goalkeeper", 0, 200, "Solid goalkeeper for " + club),
-                new Player("Star Player 5", 5, "Spain", "Midfielder", 10, 80, "Energetic midfielder for " + club),
-                new Player("Star Player 6", 6, "Spain", "Forward", 25, 90, "Prolific scorer for " + club),
-                new Player("Star Player 7", 7, "Spain", "Defender", 3, 110, "Versatile defender for " + club),
-                new Player("Star Player 8", 8, "Spain", "Midfielder", 12, 70, "Technical player for " + club),
-                new Player("Star Player 9", 9, "Spain", "Forward", 18, 60, "Young talent for " + club),
-                new Player("Star Player 10", 10, "Spain", "Midfielder", 8, 100, "Experienced player for " + club)
-        };
+        if (club == null) club = "";
+        switch (club.toLowerCase()) {
+            case "atletico":
+            case "atletico madrid":
+                return new Player[]{
+                        new Player("Jan Oblak", 13, "Slovenia", "Goalkeeper", 0, 200, "Top goalkeeper and defensive leader for Atletico Madrid"),
+                        new Player("Koke", 6, "Spain", "Midfielder", 25, 450, "Experienced captain and playmaker for Atletico Madrid"),
+                        new Player("Marcos Llorente", 14, "Spain", "Midfielder", 40, 300, "Energetic midfielder with excellent stamina and runs"),
+                        new Player("Jose Gimenez", 2, "Uruguay", "Defender", 8, 220, "Reliable center-back with strong tackling"),
+                        new Player("Stefan Savić", 15, "Montenegro", "Defender", 10, 280, "Physical defender, strong in the air"),
+                        new Player("Rodrigo De Paul", 7, "Argentina", "Midfielder", 20, 180, "Creative midfielder with great work-rate"),
+                        new Player("Antoine Griezmann", 7, "France", "Forward", 85, 500, "Experienced forward with excellent movement and finishing"),
+                        new Player("Alvaro Morata", 9, "Spain", "Striker", 70, 320, "Clinical striker with strong link-up play"),
+                        new Player("Nahuel Molina", 17, "Argentina", "Defender", 6, 120, "Right-back with good attacking contributions"),
+                        new Player("Samuel Lino", 11, "Brazil", "Winger", 12, 60, "Pacey winger with good dribbling")
+                };
+            case "sevilla":
+                return new Player[]{
+                        new Player("Yassine Bounou", 1, "Morocco", "Goalkeeper", 0, 180, "Reliable shot-stopper for Sevilla"),
+                        new Player("Jules Koundé", 5, "France", "Defender", 12, 160, "Quick center-back adept on the ball"),
+                        new Player("Diego Carlos", 3, "Brazil", "Defender", 10, 200, "Strong central defender with aerial presence"),
+                        new Player("Ivan Rakitić", 10, "Croatia", "Midfielder", 30, 400, "Experienced midfield creator"),
+                        new Player("Óliver Torres", 8, "Spain", "Midfielder", 15, 220, "Creative midfielder with good passing"),
+                        new Player("Aleix Vidal", 2, "Spain", "Defender", 5, 180, "Versatile full-back"),
+                        new Player("Youssef En-Nesyri", 12, "Morocco", "Striker", 60, 200, "Powerful striker with aerial threat"),
+                        new Player("Suso", 19, "Spain", "Winger", 18, 160, "Attacking winger with good technique"),
+                        new Player("Nemanja Gudelj", 15, "Serbia", "Midfielder", 8, 150, "Holding midfielder with great positioning"),
+                        new Player("Joan Jordán", 21, "Spain", "Midfielder", 20, 210, "Box-to-box midfielder with good work-rate")
+                };
+            case "valencia":
+                return new Player[]{
+                        new Player("Giorgi Mamardashvili", 88, "Georgia", "Goalkeeper", 0, 60, "Promising goalkeeper with good reflexes"),
+                        new Player("Jose Gayà", 14, "Spain", "Defender", 5, 300, "Experienced left-back and club leader"),
+                        new Player("Hugo Guillamón", 6, "Spain", "Defender", 6, 140, "Young versatile defender"),
+                        new Player("Daniel Wass", 22, "Denmark", "Midfielder", 10, 220, "Reliable right-sided midfielder"),
+                        new Player("Carlos Soler", 10, "Spain", "Midfielder", 40, 260, "Creative force and set-piece taker"),
+                        new Player("Gonçalo Guedes", 7, "Portugal", "Winger", 35, 250, "Pacey winger with direct runs"),
+                        new Player("Hugo Duro", 9, "Spain", "Striker", 18, 90, "Clinical finisher in and around box"),
+                        new Player("Toni Lato", 3, "Spain", "Defender", 2, 110, "Full-back with attacking qualities"),
+                        new Player("Maxi Gómez", 18, "Uruguay", "Forward", 25, 150, "Strong forward good in hold-up play"),
+                        new Player("Kevin Gameiro", 27, "France", "Forward", 20, 240, "Experienced striker")
+                };
+            case "real sociedad":
+
+                return new Player[]{
+                        new Player("Alex Remiro", 13, "Spain", "Goalkeeper", 0, 160, "Solid goalkeeper for Real Sociedad"),
+                        new Player("Aritz Elustondo", 2, "Spain", "Defender", 8, 220, "Dependable full-back"),
+                        new Player("Robin Le Normand", 4, "Spain", "Defender", 6, 180, "Calm ball-playing center-back"),
+                        new Player("Mikel Oyarzabal", 10, "Spain", "Forward", 70, 300, "Club talisman and attacker"),
+                        new Player("David Silva", 21, "Spain", "Midfielder", 50, 500, "Creative veteran playmaker"),
+                        new Player("Martin Zubimendi", 8, "Spain", "Midfielder", 10, 120, "Energetic midfielder with defensive sense"),
+                        new Player("Brais Méndez", 16, "Spain", "Midfielder", 18, 140, "Attacking midfielder with technique"),
+                        new Player("Andoni Gorosabel", 12, "Spain", "Defender", 3, 110, "Right-back with good stamina"),
+                        new Player("Kike", 9, "Spain", "Forward", 22, 150, "Versatile attacker"),
+                        new Player("Igor Zubeldia", 14, "Spain", "Midfielder", 5, 180, "Defensive-minded midfielder")
+                };
+            case "athletic":
+            case "athletic bilbao":
+                return new Player[]{
+                        new Player("Unai Simón", 1, "Spain", "Goalkeeper", 0, 210, "Reliable goalkeeper and international"),
+                        new Player("Iker Muniain", 10, "Spain", "Midfielder", 60, 500, "Creative captain and winger"),
+                        new Player("Iñaki Williams", 9, "Spain", "Forward", 80, 400, "Pacey forward with high work-rate"),
+                        new Player("Nico Williams", 11, "Spain", "Winger", 20, 90, "Explosive winger with great acceleration"),
+                        new Player("Yeray Álvarez", 22, "Spain", "Defender", 5, 140, "Solid center-back"),
+                        new Player("Iñigo Martinez", 4, "Spain", "Defender", 10, 300, "Experienced center-back"),
+                        new Player("Mikel Vesga", 6, "Spain", "Midfielder", 2, 120, "Defensive midfielder"),
+                        new Player("Óscar de Marcos", 2, "Spain", "Defender", 6, 350, "Versatile full-back and veteran"),
+                        new Player("Raúl García", 19, "Spain", "Midfielder", 90, 600, "Experienced attacking midfielder/forward"),
+                        new Player("Ander Herrera", 21, "Spain", "Midfielder", 30, 400, "Playmaker and leader")
+                };
+            case "villarreal":
+                return new Player[]{
+                        new Player("Gerónimo Rulli", 1, "Argentina", "Goalkeeper", 0, 120, "Agile goalkeeper with good distribution"),
+                        new Player("Pau Torres", 4, "Spain", "Defender", 12, 200, "Ball-playing center-back with composure"),
+                        new Player("Raúl Albiol", 3, "Spain", "Defender", 8, 350, "Veteran center-back with experience"),
+                        new Player("Yeremi Pino", 21, "Spain", "Winger", 25, 140, "Young winger with great skill"),
+                        new Player("Arnaut Danjuma", 19, "Netherlands", "Forward", 35, 100, "Pacey forward with finishing"),
+                        new Player("Etienne Capoue", 25, "France", "Midfielder", 10, 300, "Physical midfielder"),
+                        new Player("Dani Parejo", 8, "Spain", "Midfielder", 45, 400, "Creative deep-lying playmaker"),
+                        new Player("Alfonso Pedraza", 14, "Spain", "Defender", 6, 180, "Left-back with attacking output"),
+                        new Player("Boulaye Dia", 29, "Senegal", "Striker", 20, 120, "Strong center-forward"),
+                        new Player("Francis Coquelin", 22, "France", "Midfielder", 4, 260, "Defensive midfielder")
+                };
+            case "betis":
+            case "real betis":
+                return new Player[]{
+                        new Player("Rui Silva", 13, "Portugal", "Goalkeeper", 0, 120, "Competent goalkeeper with good reflexes"),
+                        new Player("Marc Bartra", 15, "Spain", "Defender", 6, 220, "Experienced center-back"),
+                        new Player("Guido Rodríguez", 16, "Argentina", "Midfielder", 10, 200, "Defensive midfielder with reading of the game"),
+                        new Player("Nabil Fekir", 8, "France", "Midfielder", 30, 220, "Creative midfielder with good shooting"),
+                        new Player("Borja Iglesias", 9, "Spain", "Striker", 40, 180, "Central striker with good finishing"),
+                        new Player("Sergio Canales", 21, "Spain", "Midfielder", 35, 300, "Skillful attacking midfielder"),
+                        new Player("Joaquín", 17, "Spain", "Winger", 50, 700, "Veteran winger and club legend"),
+                        new Player("Álex Moreno", 3, "Spain", "Defender", 6, 200, "Left-back with attacking thrust"),
+                        new Player("Diego Lainez", 22, "Mexico", "Winger", 7, 120, "Young winger with trickery"),
+                        new Player("William Carvalho", 14, "Portugal", "Midfielder", 8, 220, "Physical defensive midfielder")
+                };
+            case "celta":
+            case "celta vigo":
+                return new Player[]{
+                        new Player("Ivan Villar", 13, "Spain", "Goalkeeper", 0, 90, "Reliable keeper for Celta"),
+                        new Player("Joseph Aidoo", 3, "Ghana", "Defender", 6, 180, "Strong center-back"),
+                        new Player("Nolito", 21, "Spain", "Winger", 25, 400, "Experienced winger with good movement"),
+                        new Player("Iago Aspas", 10, "Spain", "Forward", 140, 500, "Club legend and prolific striker"),
+                        new Player("Denis Suárez", 7, "Spain", "Midfielder", 20, 300, "Creative midfielder when fit"),
+                        new Player("Santi Mina", 9, "Spain", "Forward", 30, 250, "Versatile forward and finisher"),
+                        new Player("Fran Beltrán", 8, "Spain", "Midfielder", 10, 150, "Box-to-box midfielder"),
+                        new Player("Jordi Mboula", 17, "Spain", "Winger", 5, 60, "Young attacking talent"),
+                        new Player("Okay Yokuslu", 4, "Turkey", "Defender", 3, 160, "Defensive midfielder/center-back"),
+                        new Player("Brais Méndez", 11, "Spain", "Midfielder", 18, 140, "Attacking midfielder with technique")
+                };
+            default:
+                // Default: return generic but with club in bio
+                return new Player[]{
+                        new Player("Player 1", 1, "Country", "Goalkeeper", 0, 50, "Key player for " + club),
+                        new Player("Player 2", 2, "Country", "Defender", 2, 60, "Key player for " + club),
+                        new Player("Player 3", 3, "Country", "Defender", 4, 70, "Key player for " + club),
+                        new Player("Player 4", 4, "Country", "Midfielder", 5, 80, "Key player for " + club),
+                        new Player("Player 5", 5, "Country", "Midfielder", 6, 90, "Key player for " + club),
+                        new Player("Player 6", 6, "Country", "Midfielder", 7, 100, "Key player for " + club),
+                        new Player("Player 7", 7, "Country", "Winger", 8, 110, "Key player for " + club),
+                        new Player("Player 8", 8, "Country", "Winger", 9, 120, "Key player for " + club),
+                        new Player("Player 9", 9, "Country", "Striker", 10, 130, "Key player for " + club),
+                        new Player("Player 10", 10, "Country", "Striker", 11, 140, "Key player for " + club)
+                };
+        }
     }
 
     private Player[] createBundesligaPlayers(String club) {
-        return new Player[]{
-                new Player("Key Player 1", 9, "Germany", "Forward", 25, 110, "Main attacker for " + club),
-                new Player("Key Player 2", 7, "Germany", "Midfielder", 18, 120, "Creative midfielder for " + club),
-                new Player("Key Player 3", 5, "Germany", "Defender", 6, 140, "Solid center-back for " + club),
-                new Player("Key Player 4", 2, "Germany", "Goalkeeper", 0, 170, "Reliable goalkeeper for " + club),
-                new Player("Key Player 5", 11, "Germany", "Winger", 20, 90, "Pacey winger for " + club),
-                new Player("Key Player 6", 8, "Germany", "Midfielder", 12, 100, "Box-to-box presence for " + club),
-                new Player("Key Player 7", 3, "Germany", "Defender", 4, 130, "Versatile defender for " + club),
-                new Player("Key Player 8", 14, "Germany", "Forward", 22, 80, "Young forward for " + club),
-                new Player("Key Player 9", 4, "Germany", "Defender", 7, 150, "Aerial threat for " + club),
-                new Player("Key Player 10", 1, "Germany", "Goalkeeper", 0, 200, "Commanding goalkeeper for " + club)
-        };
+        if (club == null) club = "";
+        switch (club.toLowerCase()) {
+            case "dortmund":
+            case "borussia dortmund":
+                return new Player[]{
+                        new Player("Gregor Kobel", 1, "Switzerland", "Goalkeeper", 0, 90, "Agile keeper with great shot-stopping"),
+                        new Player("Mats Hummels", 15, "Germany", "Defender", 10, 350, "Experienced center-back with leadership"),
+                        new Player("Manuel Akanji", 16, "Switzerland", "Defender", 5, 180, "Solid center-back comfortable on ball"),
+                        new Player("Julian Brandt", 19, "Germany", "Midfielder", 25, 240, "Creative midfielder with good vision"),
+                        new Player("Jadon Sancho", 7, "England", "Winger", 60, 300, "Pacey winger with dribbling skills"),
+                        new Player("Marco Reus", 11, "Germany", "Forward", 120, 400, "Veteran forward and club icon"),
+                        new Player("Niclas Füllkrug", 9, "Germany", "Striker", 30, 120, "Powerful striker with great finishing"),
+                        new Player("Donyell Malen", 12, "Netherlands", "Forward", 25, 140, "Quick striker with good movement"),
+                        new Player("Raphaël Guerreiro", 22, "Portugal", "Defender", 10, 300, "Attack-minded full-back"),
+                        new Player("Emre Can", 23, "Germany", "Midfielder", 8, 220, "Box-to-box midfielder with physical presence")
+                };
+            case "leipzig":
+            case "rb leipzig":
+                return new Player[]{
+                        new Player("Peter Gulacsi", 1, "Hungary", "Goalkeeper", 0, 220, "Reliable shot-stopper"),
+                        new Player("Willi Orban", 4, "Hungary", "Defender", 12, 260, "Experienced center-back and leader"),
+                        new Player("Mohamed Simakan", 3, "France", "Defender", 4, 110, "Young defender with athleticism"),
+                        new Player("Xavi Simons", 10, "Netherlands", "Midfielder", 20, 120, "Creative attacking midfielder"),
+                        new Player("Timo Werner", 11, "Germany", "Forward", 60, 300, "Pacey striker with movement"),
+                        new Player("Christopher Nkunku", 18, "France", "Forward", 50, 180, "Versatile attacker with scoring touch"),
+                        new Player("Ryan Gravenberch", 25, "Netherlands", "Midfielder", 8, 80, "Tall box-to-box midfielder"),
+                        new Player("Andre Silva", 9, "Portugal", "Striker", 35, 140, "Clinical finisher"),
+                        new Player("Konrad Laimer", 6, "Austria", "Midfielder", 10, 200, "Energetic midfielder"),
+                        new Player("Amadou Haidara", 8, "Mali", "Midfielder", 12, 210, "Box-to-box midfielder")
+                };
+            case "leverkusen":
+            case "bayer leverkusen":
+                return new Player[]{
+                        new Player("Lukas Hradecky", 1, "Finland", "Goalkeeper", 0, 220, "Experienced goalkeeper"),
+                        new Player("Jonathan Tah", 4, "Germany", "Defender", 6, 210, "Strong center-back"),
+                        new Player("Piero Hincapié", 2, "Ecuador", "Defender", 5, 90, "Young defender with great potential"),
+                        new Player("Jeremie Frimpong", 21, "Netherlands", "Defender", 12, 140, "Explosive full-back"),
+                        new Player("Charles Aránguiz", 20, "Chile", "Midfielder", 10, 320, "Experienced midfielder"),
+                        new Player("Florian Wirtz", 10, "Germany", "Midfielder", 40, 120, "Creative prodigy and playmaker"),
+                        new Player("Moussa Diaby", 7, "France", "Winger", 25, 160, "Pacey winger with skill"),
+                        new Player("Victor Boniface", 9, "Nigeria", "Striker", 18, 60, "Young forward with scoring instinct"),
+                        new Player("Robert Andrich", 8, "Germany", "Midfielder", 7, 200, "Hard-working midfielder"),
+                        new Player("Sven Bender", 5, "Germany", "Defender", 3, 400, "Veteran defender (role model)")
+                };
+            case "frankfurt":
+            case "eintracht frankfurt":
+                return new Player[]{
+                        new Player("Kevin Trapp", 25, "Germany", "Goalkeeper", 0, 230, "Commanding goalkeeper"),
+                        new Player("Tuta", 2, "Brazil", "Defender", 6, 140, "Powerful center-back"),
+                        new Player("Martin Hinteregger", 21, "Austria", "Defender", 8, 260, "Aggressive defender"),
+                        new Player("Filip Kostić", 11, "Serbia", "Winger", 30, 340, "Creative winger and crosser"),
+                        new Player("Jesper Lindstrøm", 20, "Denmark", "Midfielder", 18, 100, "Energetic attacker"),
+                        new Player("Rafael Santos Borré", 19, "Colombia", "Forward", 25, 160, "Striker with intelligent runs"),
+                        new Player("Jesús Vallejo", 3, "Spain", "Defender", 4, 120, "Reliable defender"),
+                        new Player("Dominik Kohr", 6, "Germany", "Midfielder", 5, 180, "Defensive midfielder"),
+                        new Player("Mario Götze", 27, "Germany", "Midfielder", 45, 500, "Creative veteran midfielder"),
+                        new Player("Ansgar Knauff", 24, "Germany", "Winger", 7, 60, "Young winger with promise")
+                };
+            case "wolfsburg":
+                return new Player[]{
+                        new Player("Koen Casteels", 1, "Belgium", "Goalkeeper", 0, 240, "Tall reliable keeper"),
+                        new Player("Maxence Lacroix", 2, "France", "Defender", 5, 120, "Strong center-back"),
+                        new Player("John Brooks", 5, "USA", "Defender", 3, 200, "Experienced back"),
+                        new Player("Xaver Schlager", 6, "Austria", "Midfielder", 8, 150, "Energetic midfielder"),
+                        new Player("Wout Weghorst", 9, "Netherlands", "Striker", 40, 220, "Target man with aerial threat"),
+                        new Player("Maximilian Arnold", 8, "Germany", "Midfielder", 25, 300, "Creative midfielder and leader"),
+                        new Player("Jeremiah St. Juste", 4, "Netherlands", "Defender", 2, 80, "Solid defender"),
+                        new Player("Matthias Ginter", 28, "Germany", "Defender", 6, 260, "Experienced center-back"),
+                        new Player("Paulo Otávio", 3, "Brazil", "Defender", 1, 110, "Left-back with attacking runs"),
+                        new Player("Bartosz Białek", 11, "Poland", "Forward", 10, 60, "Young striker with potential")
+                };
+            case "gladbach":
+            case "borussia monchengladbach":
+                return new Player[]{
+                        new Player("Yann Sommer", 1, "Switzerland", "Goalkeeper", 0, 240, "Top-level keeper with great reflexes"),
+                        new Player("Matthias Ginter", 4, "Germany", "Defender", 6, 260, "Versatile center-back"),
+                        new Player("Denis Zakaria", 8, "Switzerland", "Midfielder", 10, 200, "Powerful midfielder"),
+                        new Player("Alassane Pléa", 14, "France", "Forward", 35, 220, "Experienced striker"),
+                        new Player("Marcus Thuram", 19, "France", "Forward", 45, 200, "Strong forward with great technique"),
+                        new Player("Florian Neuhaus", 10, "Germany", "Midfielder", 12, 180, "Creative midfielder"),
+                        new Player("Ramsey", 7, "Belgium", "Winger", 5, 80, "Pacey wide player"),
+                        new Player("László Bénes", 20, "Slovakia", "Midfielder", 4, 140, "Box-to-box midfielder"),
+                        new Player("Gianluca Florian", 2, "Germany", "Defender", 1, 60, "Young defender"),
+                        new Player("Ko Itakura", 5, "Japan", "Defender", 2, 100, "Ball-playing defender")
+                };
+            case "stuttgart":
+                return new Player[]{
+                        new Player("Waldemar Anton", 2, "Germany", "Defender", 4, 200, "Leader in defense"),
+                        new Player("Nicolas Gonzalez", 11, "Argentina", "Winger", 25, 160, "Skillful winger with goals"),
+                        new Player("Sasa Kalajdzic", 9, "Austria", "Striker", 20, 120, "Tall striker with aerial ability"),
+                        new Player("Tiago Tomas", 7, "Portugal", "Winger", 8, 60, "Young attacking talent"),
+                        new Player("Atakan Karazor", 6, "Germany", "Midfielder", 3, 80, "Midfield enforcer"),
+                        new Player("Philipp Förster", 8, "Germany", "Midfielder", 5, 110, "Box-to-box midfielder"),
+                        new Player("Wataru Endo", 4, "Japan", "Midfielder", 10, 240, "Tactical defensive midfielder"),
+                        new Player("Pascal Stenzel", 15, "Germany", "Defender", 2, 130, "Full-back with stamina"),
+                        new Player("Roberto Massimo", 10, "Germany", "Winger", 7, 70, "Pacey attacker"),
+                        new Player("Gregor Kobel", 1, "Switzerland", "Goalkeeper", 0, 90, "Reliable keeper")
+                };
+            case "hoffenheim":
+                return new Player[]{
+                        new Player("Oliver Baumann", 1, "Germany", "Goalkeeper", 0, 320, "Experienced goalkeeper"),
+                        new Player("Kevin Vogt", 5, "Germany", "Defender", 6, 300, "Reliable center-back"),
+                        new Player("Ihlas Bebou", 11, "Togo", "Winger", 18, 200, "Direct winger with pace"),
+                        new Player("Andrej Kramarić", 27, "Croatia", "Forward", 85, 420, "Prolific forward and captain"),
+                        new Player("Geoffrey Kondogbia", 6, "France", "Midfielder", 8, 100, "Strong midfielder"),
+                        new Player("Robert Skov", 7, "Denmark", "Winger", 22, 160, "Creative winger with goals"),
+                        new Player("Chris Richards", 3, "USA", "Defender", 2, 60, "Young center-back"),
+                        new Player("Diadie Samassékou", 8, "Mali", "Midfielder", 4, 140, "Ball-winning midfielder"),
+                        new Player("Ermin Bičakčić", 4, "Bosnia", "Defender", 3, 200, "Experienced center-back"),
+                        new Player("Jacob Bruun Larsen", 10, "Denmark", "Winger", 10, 80, "Quick wide attacker")
+                };
+            case "freiburg":
+                return new Player[]{
+                        new Player("Mark Flekken", 1, "Netherlands", "Goalkeeper", 0, 90, "Reliable goalkeeper"),
+                        new Player("Nico Schlotterbeck", 4, "Germany", "Defender", 5, 120, "Young ball-playing center-back"),
+                        new Player("Christian Günter", 3, "Germany", "Defender", 6, 330, "Consistent left-back"),
+                        new Player("Roland Sallai", 11, "Hungary", "Winger", 18, 140, "Attacking winger with goals"),
+                        new Player("Michael Gregoritsch", 9, "Austria", "Striker", 25, 160, "Target man with finishing"),
+                        new Player("Vincenzo Grifo", 10, "Germany", "Midfielder", 45, 300, "Set-piece specialist and creator"),
+                        new Player("Lukas Kübler", 2, "Germany", "Defender", 2, 200, "Full-back with defensive discipline"),
+                        new Player("Keven Schlotterbeck", 5, "Germany", "Defender", 3, 150, "Tough center-back"),
+                        new Player("Yannick Reine-Adélaïde", 8, "France", "Midfielder", 4, 80, "Box-to-box midfielder"),
+                        new Player("Christian Streich", 99, "Germany", "Coach", 0, 0, "Legendary coach (placeholder entry)")
+                };
+            default:
+                // generic fallback
+                return new Player[]{
+                        new Player("Player 1", 1, "Country", "Goalkeeper", 0, 50, "Key player for " + club),
+                        new Player("Player 2", 2, "Country", "Defender", 2, 60, "Key player for " + club),
+                        new Player("Player 3", 3, "Country", "Defender", 4, 70, "Key player for " + club),
+                        new Player("Player 4", 4, "Country", "Midfielder", 5, 80, "Key player for " + club),
+                        new Player("Player 5", 5, "Country", "Midfielder", 6, 90, "Key player for " + club),
+                        new Player("Player 6", 6, "Country", "Midfielder", 7, 100, "Key player for " + club),
+                        new Player("Player 7", 7, "Country", "Winger", 8, 110, "Key player for " + club),
+                        new Player("Player 8", 8, "Country", "Winger", 9, 120, "Key player for " + club),
+                        new Player("Player 9", 9, "Country", "Striker", 10, 130, "Key player for " + club),
+                        new Player("Player 10", 10, "Country", "Striker", 11, 140, "Key player for " + club)
+                };
+        }
     }
 
     private Player[] createSerieAPlayers(String club) {
-        return new Player[]{
-                new Player("Italian Star 1", 10, "Italy", "Forward", 30, 120, "Key striker for " + club),
-                new Player("Italian Star 2", 8, "Italy", "Midfielder", 18, 90, "Creative midfielder for " + club),
-                new Player("Italian Star 3", 6, "Italy", "Defender", 5, 150, "Reliable defender for " + club),
-                new Player("Italian Star 4", 1, "Italy", "Goalkeeper", 0, 180, "Experienced goalkeeper for " + club),
-                new Player("Italian Star 5", 7, "Italy", "Winger", 20, 100, "Pacey winger for " + club),
-                new Player("Italian Star 6", 4, "Italy", "Defender", 3, 130, "Ball-playing defender for " + club),
-                new Player("Italian Star 7", 11, "Italy", "Forward", 22, 80, "Young forward for " + club),
-                new Player("Italian Star 8", 5, "Italy", "Midfielder", 12, 110, "Box-to-box midfielder for " + club),
-                new Player("Italian Star 9", 3, "Italy", "Defender", 2, 140, "Versatile back for " + club),
-                new Player("Italian Star 10", 2, "Italy", "Midfielder", 9, 100, "Set-piece specialist for " + club)
-        };
+        if (club == null) club = "";
+        switch (club.toLowerCase()) {
+            case "milan":
+            case "ac milan":
+                return new Player[]{
+                        new Player("Mike Maignan", 16, "France", "Goalkeeper", 0, 150, "Top-level goalkeeper for AC Milan"),
+                        new Player("Theo Hernandez", 19, "France", "Defender", 10, 200, "Explosive left-back with attacking output"),
+                        new Player("Fikayo Tomori", 23, "England", "Defender", 4, 120, "Pacey center-back good on the ball"),
+                        new Player("Rafael Leão", 17, "Portugal", "Winger", 50, 210, "Creative forward with speed and dribbling"),
+                        new Player("Olivier Giroud", 9, "France", "Striker", 80, 600, "Experienced target man and finisher"),
+                        new Player("Sandro Tonali", 8, "Italy", "Midfielder", 12, 140, "Central midfielder with great vision"),
+                        new Player("Ismaël Bennacer", 4, "Algeria", "Midfielder", 8, 180, "Dynamic midfielder with tackling"),
+                        new Player("Davide Calabria", 2, "Italy", "Defender", 3, 260, "Right-back with consistency"),
+                        new Player("Franck Kessié", 79, "Ivory Coast", "Midfielder", 20, 300, "Powerful box-to-box midfielder"),
+                        new Player("Brahim Díaz", 21, "Spain", "Midfielder", 15, 100, "Attacking midfielder with flair")
+                };
+            case "juventus":
+                return new Player[]{
+                        new Player("Wojciech Szczęsny", 1, "Poland", "Goalkeeper", 0, 240, "Reliable keeper with big-match experience"),
+                        new Player("Leonardo Bonucci", 19, "Italy", "Defender", 12, 500, "Veteran center-back and leader"),
+                        new Player("Danilo", 6, "Brazil", "Defender", 8, 280, "Versatile defender right/center"),
+                        new Player("Federico Chiesa", 22, "Italy", "Winger", 35, 180, "Dynamic wide attacker with directness"),
+                        new Player("Dusan Vlahović", 9, "Serbia", "Striker", 45, 120, "Clinical striker with strong presence"),
+                        new Player("Adrien Rabiot", 25, "France", "Midfielder", 10, 220, "Box-to-box midfielder with strength"),
+                        new Player("Paulo Dybala", 10, "Argentina", "Forward", 90, 450, "Creative forward with technique"),
+                        new Player("Filip Kostić", 11, "Serbia", "Winger", 18, 100, "Crossing specialist on the wing"),
+                        new Player("Federico Bernardeschi", 20, "Italy", "Winger", 10, 250, "Versatile attacker"),
+                        new Player("Nicolo Fagioli", 8, "Italy", "Midfielder", 6, 60, "Young central midfielder")
+                };
+            case "napoli":
+                return new Player[]{
+                        new Player("Alex Meret", 1, "Italy", "Goalkeeper", 0, 120, "Agile keeper with good reflexes"),
+                        new Player("Giovanni Di Lorenzo", 22, "Italy", "Defender", 6, 260, "Dependable right-back and captain"),
+                        new Player("Kalidou Koulibaly", 26, "Senegal", "Defender", 20, 380, "Strong center-back with leadership"),
+                        new Player("Kim Min-jae", 6, "South Korea", "Defender", 5, 120, "Physical center-back with pace"),
+                        new Player("Victor Osimhen", 9, "Nigeria", "Striker", 80, 120, "Powerful striker with finishing"),
+                        new Player("Piotr Zieliński", 20, "Poland", "Midfielder", 35, 300, "Creative midfielder with technique"),
+                        new Player("Lorenzo Insigne", 24, "Italy", "Winger", 60, 400, "Creative left winger (veteran)"),
+                        new Player("Dries Mertens", 14, "Belgium", "Forward", 120, 600, "Experienced finisher"),
+                        new Player("Stanislav Lobotka", 68, "Slovakia", "Midfielder", 8, 200, "Deep-lying playmaker"),
+                        new Player("Hirving Lozano", 11, "Mexico", "Winger", 25, 180, "Direct winger with pace")
+                };
+            case "roma":
+                return new Player[]{
+                        new Player("Rui Patrício", 1, "Portugal", "Goalkeeper", 0, 200, "Experienced keeper with leadership"),
+                        new Player("Gianluca Mancini", 23, "Italy", "Defender", 8, 150, "Strong center-back"),
+                        new Player("Chris Smalling", 12, "England", "Defender", 10, 300, "Physical center-back"),
+                        new Player("Lorenzo Pellegrini", 7, "Italy", "Midfielder", 35, 260, "Creative captain and midfielder"),
+                        new Player("Nicolo Zaniolo", 22, "Italy", "Winger", 20, 120, "Dynamic forward with technique"),
+                        new Player("Henrikh Mkhitaryan", 22, "Armenia", "Midfielder", 70, 400, "Experienced playmaker"),
+                        new Player("Paulo Dybala", 21, "Argentina", "Forward", 90, 450, "Creative forward"),
+                        new Player("Tammy Abraham", 9, "England", "Striker", 40, 140, "Strong striker with eye for goal"),
+                        new Player("Matías Viña", 3, "Uruguay", "Defender", 2, 90, "Full-back with attacking runs"),
+                        new Player("Stephan El Shaarawy", 92, "Italy", "Winger", 25, 300, "Skilful winger")
+                };
+            case "lazio":
+                return new Player[]{
+                        new Player("Pietro Strakosha", 1, "Albania", "Goalkeeper", 0, 180, "Experienced goalkeeper"),
+                        new Player("Sergej Milinković-Savić", 21, "Serbia", "Midfielder", 40, 300, "Powerful box-to-box midfielder"),
+                        new Player("Ciro Immobile", 17, "Italy", "Striker", 180, 400, "Prolific striker and captain"),
+                        new Player("Luis Alberto", 10, "Spain", "Midfielder", 50, 350, "Creative attacking midfielder"),
+                        new Player("Francesco Acerbi", 15, "Italy", "Defender", 20, 400, "Veteran defender with positioning"),
+                        new Player("Stefan Radu", 3, "Romania", "Defender", 4, 500, "Long-serving defender"),
+                        new Player("Manuel Lazzari", 29, "Italy", "Defender", 6, 220, "Pacey full-back"),
+                        new Player("Felipe Anderson", 7, "Brazil", "Winger", 35, 300, "Skillful winger with direct runs"),
+                        new Player("Jordan Lukaku", 40, "Belgium", "Defender", 2, 120, "Full-back with stamina"),
+                        new Player("Milan Badelj", 4, "Croatia", "Midfielder", 3, 200, "Experienced central midfielder")
+                };
+            case "atalanta":
+                return new Player[]{
+                        new Player("Marco Sportiello", 1, "Italy", "Goalkeeper", 0, 140, "Reliable keeper"),
+                        new Player("Giorgio Scalvini", 14, "Italy", "Defender", 3, 80, "Young center-back with potential"),
+                        new Player("Teun Koopmeiners", 30, "Netherlands", "Midfielder", 30, 200, "Box-to-box midfielder and set-piece taker"),
+                        new Player("Davide Zappacosta", 21, "Italy", "Defender", 4, 180, "Versatile full-back"),
+                        new Player("Duvan Zapata", 91, "Colombia", "Striker", 70, 300, "Powerful striker with finishing"),
+                        new Player("Luis Muriel", 9, "Colombia", "Forward", 45, 220, "Pacey forward with trickery"),
+                        new Player("Ruslan Malinovskyi", 18, "Ukraine", "Midfielder", 20, 150, "Attacking midfielder with shooting"),
+                        new Player("Robin Gosens", 8, "Germany", "Defender", 10, 200, "Attacking wing-back"),
+                        new Player("Teemu Pukki", 7, "Finland", "Forward", 20, 300, "Experienced striker"),
+                        new Player("Martín Satriano", 11, "Uruguay", "Striker", 8, 40, "Young forward with potential")
+                };
+            case "fiorentina":
+                return new Player[]{
+                        new Player("Bartłomiej Drągowski", 1, "Poland", "Goalkeeper", 0, 120, "Solid keeper"),
+                        new Player("Nicolò González", 22, "Argentina", "Winger", 18, 140, "Quick winger with goals"),
+                        new Player("German Pezzella", 4, "Argentina", "Defender", 6, 220, "Experienced center-back"),
+                        new Player("Dusan Vlahović", 9, "Serbia", "Striker", 40, 180, "Powerful striker"),
+                        new Player("Giovanni Simeone", 18, "Argentina", "Striker", 30, 200, "Aggressive forward"),
+                        new Player("Lucas Torreira", 11, "Uruguay", "Midfielder", 5, 240, "Tough defensive midfielder"),
+                        new Player("Arthur", 5, "Brazil", "Midfielder", 3, 80, "Creative central midfielder"),
+                        new Player("Lucas Beltrán", 19, "Argentina", "Striker", 6, 60, "Young forward with promise"),
+                        new Player("Cristiano Biraghi", 3, "Italy", "Defender", 5, 260, "Attacking full-back"),
+                        new Player("Gaetano Castrovilli", 8, "Italy", "Midfielder", 10, 150, "Creative midfielder")
+                };
+            case "bologna":
+                return new Player[]{
+                        new Player("Lukasz Skorupski", 28, "Poland", "Goalkeeper", 0, 220, "Experience between the sticks"),
+                        new Player("Gary Medel", 17, "Chile", "Defender", 3, 400, "Tough defensive presence"),
+                        new Player("Riccardo Orsolini", 7, "Italy", "Winger", 25, 220, "Attacking winger with goals"),
+                        new Player("Rodrigo Palacio", 10, "Argentina", "Forward", 50, 700, "Veteran forward"),
+                        new Player("Marko Arnautović", 11, "Austria", "Forward", 35, 300, "Strong striker with technique"),
+                        new Player("Aaron Hickey", 2, "Scotland", "Defender", 4, 80, "Young full-back with potential"),
+                        new Player("Adam Masina", 3, "Morocco", "Defender", 2, 180, "Reliable left-back"),
+                        new Player("Nicolò Fagioli", 8, "Italy", "Midfielder", 6, 60, "Promising central midfielder"),
+                        new Player("Mattias Svanberg", 22, "Sweden", "Midfielder", 8, 140, "Energetic midfielder"),
+                        new Player("Arthur Theate", 4, "Belgium", "Defender", 1, 50, "Young solid center-back")
+                };
+            case "torino":
+                return new Player[]{
+                        new Player("Vanja Milinković-Savić", 33, "Serbia", "Goalkeeper", 0, 140, "Tall keeper with reach"),
+                        new Player("Gleison Bremer", 3, "Brazil", "Defender", 10, 200, "Strong center-back"),
+                        new Player("Riccardo Calafiori", 19, "Italy", "Defender", 2, 60, "Young left-back"),
+                        new Player("Andrea Belotti", 9, "Italy", "Striker", 80, 300, "Experienced forward and leader"),
+                        new Player("Sasa Lukic", 8, "Serbia", "Midfielder", 12, 280, "Energetic central midfielder"),
+                        new Player("Tomás Rincón", 5, "Venezuela", "Midfielder", 3, 300, "Defensive midfielder"),
+                        new Player("Simone Zaza", 11, "Italy", "Striker", 40, 320, "Powerful striker"),
+                        new Player("Arsène", 20, "France", "Winger", 2, 10, "Young winger (placeholder)"),
+                        new Player("Rolando Mandragora", 6, "Italy", "Midfielder", 5, 200, "Box-to-box midfield option"),
+                        new Player("Kamil Glik", 4, "Poland", "Defender", 8, 360, "Veteran center-back")
+                };
+            default:
+                return new Player[]{
+                        new Player("Player 1", 1, "Country", "Goalkeeper", 0, 50, "Key player for " + club),
+                        new Player("Player 2", 2, "Country", "Defender", 2, 60, "Key player for " + club),
+                        new Player("Player 3", 3, "Country", "Defender", 4, 70, "Key player for " + club),
+                        new Player("Player 4", 4, "Country", "Midfielder", 5, 80, "Key player for " + club),
+                        new Player("Player 5", 5, "Country", "Midfielder", 6, 90, "Key player for " + club),
+                        new Player("Player 6", 6, "Country", "Midfielder", 7, 100, "Key player for " + club),
+                        new Player("Player 7", 7, "Country", "Winger", 8, 110, "Key player for " + club),
+                        new Player("Player 8", 8, "Country", "Winger", 9, 120, "Key player for " + club),
+                        new Player("Player 9", 9, "Country", "Striker", 10, 130, "Key player for " + club),
+                        new Player("Player 10", 10, "Country", "Striker", 11, 140, "Key player for " + club)
+                };
+        }
     }
 
     private Player[] createLigue1Players(String club) {
-        return new Player[]{
-                new Player("French Star 1", 9, "France", "Forward", 40, 140, "Main striker for " + club),
-                new Player("French Star 2", 10, "France", "Midfielder", 15, 110, "Creative midfielder for " + club),
-                new Player("French Star 3", 3, "France", "Defender", 6, 160, "Reliable defender for " + club),
-                new Player("French Star 4", 1, "France", "Goalkeeper", 0, 170, "Commanding goalkeeper for " + club),
-                new Player("French Star 5", 7, "France", "Winger", 25, 90, "Pacey winger for " + club),
-                new Player("French Star 6", 6, "France", "Midfielder", 12, 100, "Box-to-box presence for " + club),
-                new Player("French Star 7", 4, "France", "Defender", 4, 130, "Versatile defender for " + club),
-                new Player("French Star 8", 11, "France", "Forward", 20, 80, "Young attacker for " + club),
-                new Player("French Star 9", 5, "France", "Midfielder", 8, 95, "Energetic midfielder for " + club),
-                new Player("French Star 10", 2, "France", "Defender", 3, 120, "Full-back with attacking intent for " + club)
-        };
+        if (club == null) club = "";
+        switch (club.toLowerCase()) {
+            case "marseille":
+                return new Player[]{
+                        new Player("Steve Mandanda", 1, "France", "Goalkeeper", 0, 500, "Veteran goalkeeper and captain"),
+                        new Player("William Saliba", 4, "France", "Defender", 6, 140, "Strong center-back on loan/return"),
+                        new Player("Leonardo Balerdi", 3, "Argentina", "Defender", 3, 120, "Physical center-back"),
+                        new Player("Mattéo Guendouzi", 6, "France", "Midfielder", 12, 200, "Energetic midfielder with aggression"),
+                        new Player("Dimitri Payet", 10, "France", "Midfielder", 80, 450, "Creative playmaker with set-piece mastery"),
+                        new Player("Gerson", 8, "Brazil", "Midfielder", 10, 160, "Box-to-box midfielder with skill"),
+                        new Player("Arkadiusz Milik", 9, "Poland", "Striker", 50, 220, "Experienced striker with finishing"),
+                        new Player("Cengiz Ünder", 7, "Turkey", "Winger", 20, 140, "Pacey winger with direct play"),
+                        new Player("Pol Lirola", 15, "Spain", "Defender", 5, 180, "Attacking right-back"),
+                        new Player("Pape Gueye", 29, "France", "Midfielder", 2, 90, "Defensive midfielder")
+                };
+            case "lyon":
+                return new Player[]{
+                        new Player("Anthony Lopes", 1, "Portugal", "Goalkeeper", 0, 300, "Steady keeper for Lyon"),
+                        new Player("Thiago Mendes", 8, "Brazil", "Midfielder", 6, 200, "Experienced midfielder"),
+                        new Player("Houssem Aouar", 10, "France", "Midfielder", 35, 240, "Creative attacking midfielder"),
+                        new Player("Moussa Dembélé", 9, "France", "Striker", 60, 300, "Clinical striker with movement"),
+                        new Player("Rayan Cherki", 18, "France", "Winger", 12, 80, "Young technical attacker"),
+                        new Player("Castello Lukeba", 4, "France", "Defender", 3, 60, "Promising center-back"),
+                        new Player("Jason Denayer", 5, "Belgium", "Defender", 8, 300, "Versatile defender"),
+                        new Player("Maxence Caqueret", 6, "France", "Midfielder", 5, 140, "Energetic central midfielder"),
+                        new Player("Karl Toko Ekambi", 11, "Cameroon", "Winger", 30, 240, "Pacey forward"),
+                        new Player("Bruno Guimarães", 27, "Brazil", "Midfielder", 20, 200, "Creative and physical midfielder")
+                };
+            case "monaco":
+                return new Player[]{
+                        new Player("Alexander Nübel", 1, "Germany", "Goalkeeper", 0, 80, "Young keeper with potential"),
+                        new Player("Aurelien Tchouaméni", 14, "France", "Midfielder", 10, 120, "Strong central midfielder"),
+                        new Player("Wissam Ben Yedder", 9, "France", "Striker", 85, 320, "Clinical finisher and captain"),
+                        new Player("Benoît Badiashile", 5, "France", "Defender", 6, 150, "Powerful center-back"),
+                        new Player("Fofana", 8, "Mali", "Midfielder", 15, 150, "Dynamic midfielder with aggression"),
+                        new Player("Gelson Martins", 11, "Portugal", "Winger", 10, 200, "Explosive wide player"),
+                        new Player("Youssouf Fofana", 25, "France", "Midfielder", 8, 140, "Box-to-box midfielder"),
+                        new Player("Caio Henrique", 22, "Brazil", "Defender", 4, 160, "Left-back with attacking traits"),
+                        new Player("Kevin Volland", 27, "Germany", "Forward", 30, 220, "Experienced attacker"),
+                        new Player("Ismail Jakobs", 18, "Germany", "Defender", 2, 60, "Versatile full-back")
+                };
+            case "lille":
+                return new Player[]{
+                        new Player("Mike Maignan", 16, "France", "Goalkeeper", 0, 160, "Top goalkeeper and leader"),
+                        new Player("José Fonte", 3, "Portugal", "Defender", 6, 500, "Veteran center-back"),
+                        new Player("Jonathan David", 9, "Canada", "Striker", 55, 200, "Prolific young striker"),
+                        new Player("Renato Sanches", 8, "Portugal", "Midfielder", 20, 180, "Dynamic midfielder with drive"),
+                        new Player("Boubakary Soumaré", 6, "France", "Midfielder", 5, 160, "Powerful central midfielder"),
+                        new Player("Jonathan Ikoné", 11, "France", "Winger", 25, 220, "Pacey and technical winger"),
+                        new Player("Yusuf Yazıcı", 10, "Turkey", "Midfielder", 15, 120, "Creative attacking midfielder"),
+                        new Player("Sven Botman", 4, "Netherlands", "Defender", 5, 140, "Towering center-back"),
+                        new Player("Zeki Çelik", 2, "Turkey", "Defender", 4, 190, "Attacking right-back"),
+                        new Player("Edon Zhegrova", 7, "Kosovo", "Winger", 6, 80, "Young wide attacker")
+                };
+            case "rennes":
+                return new Player[]{
+                        new Player("Alban Lafont", 1, "France", "Goalkeeper", 0, 180, "Agile keeper"),
+                        new Player("Malo Gusto", 2, "France", "Defender", 3, 70, "Young right-back with potential"),
+                        new Player("Bruno Guimarães", 5, "Brazil", "Midfielder", 10, 140, "Energetic midfielder"),
+                        new Player("Flavien Tait", 8, "France", "Midfielder", 8, 200, "Versatile attacking midfielder"),
+                        new Player("Martin Terrier", 10, "France", "Forward", 22, 210, "Goal-scoring forward"),
+                        new Player("Lovro Majer", 17, "Croatia", "Midfielder", 6, 80, "Creative attacking midfielder"),
+                        new Player("Faitout Maouassa", 3, "France", "Defender", 1, 120, "Left-back with running ability"),
+                        new Player("Hamari Traoré", 14, "Mali", "Defender", 4, 260, "Reliable full-back"),
+                        new Player("Jonathan David", 9, "Canada", "Striker", 55, 200, "Prolific striker (note: historical)"),
+                        new Player("Serhou Guirassy", 19, "Guinea", "Striker", 30, 140, "Powerful forward")
+                };
+            case "nice":
+                return new Player[]{
+                        new Player("Marin Ljubičić", 1, "Croatia", "Goalkeeper", 0, 80, "Capable keeper"),
+                        new Player("Hicham Boudaoui", 8, "Algeria", "Midfielder", 6, 120, "Energetic midfielder"),
+                        new Player("Khephren Thuram", 12, "France", "Midfielder", 8, 100, "Box-to-box midfielder"),
+                        new Player("Amine Gouiri", 9, "France", "Striker", 25, 140, "Technical striker"),
+                        new Player("Terem Moffi", 11, "Nigeria", "Striker", 20, 90, "Powerful and quick forward"),
+                        new Player("Jean-Clair Todibo", 5, "France", "Defender", 3, 110, "Strong center-back"),
+                        new Player("Youcef Atal", 2, "Algeria", "Defender", 4, 160, "Attacking full-back"),
+                        new Player("Morgan Sanson", 6, "France", "Midfielder", 10, 220, "Experienced midfielder"),
+                        new Player("Fabrice Olinga", 7, "Cameroon", "Forward", 5, 70, "Young attacking talent"),
+                        new Player("Jordan Lotomba", 3, "Switzerland", "Defender", 2, 120, "Full-back with speed")
+                };
+            case "lens":
+                return new Player[]{
+                        new Player("Brice Samba", 1, "DR Congo", "Goalkeeper", 0, 120, "Reliable shot-stopper"),
+                        new Player("Seko Fofana", 28, "Ivory Coast", "Midfielder", 20, 220, "Dynamic and powerful midfielder"),
+                        new Player("Przemysław Frankowski", 11, "Poland", "Winger", 18, 200, "Pacey winger with crossing"),
+                        new Player("Wesley Said", 9, "France", "Forward", 22, 180, "Direct attacker"),
+                        new Player("Jonathan Clauss", 2, "France", "Defender", 3, 270, "Energetic right-back"),
+                        new Player("Gaël Kakuta", 10, "DR Congo", "Midfielder", 12, 300, "Creative playmaker"),
+                        new Player("Loïc Badé", 5, "France", "Defender", 4, 100, "Strong center-back"),
+                        new Player("Przemysław Frankowski", 11, "Poland", "Winger", 18, 200, "Repeated entry (intentional placeholder)"),
+                        new Player("Ignatius Ganago", 7, "Cameroon", "Forward", 6, 80, "Pacey forward"),
+                        new Player("Massadio Haïdara", 3, "Mali", "Defender", 1, 150, "Left-back with experience")
+                };
+            case "reims":
+                return new Player[]{
+                        new Player("Moussa Doumbia", 1, "Mali", "Goalkeeper", 0, 100, "Reliable keeper"),
+                        new Player("Yvan Neyou", 6, "Cameroon", "Midfielder", 2, 80, "Defensive midfielder"),
+                        new Player("Boulaye Dia", 9, "Senegal", "Striker", 25, 140, "Strong striker with good runs"),
+                        new Player("Florian Miguel", 3, "France", "Defender", 1, 80, "Steady full-back"),
+                        new Player("Ghislain Konan", 2, "Ivory Coast", "Defender", 3, 120, "Left-back with stamina"),
+                        new Player("Djeidi Gassama", 18, "France", "Winger", 4, 50, "Young attacking talent"),
+                        new Player("Pengwin N'Goumou", 21, "France", "Midfielder", 5, 70, "Promising midfield player"),
+                        new Player("Marshall Munetsi", 24, "Zimbabwe", "Midfielder", 6, 110, "Physical midfielder"),
+                        new Player("Dante", 55, "Brazil", "Defender", 10, 700, "Veteran center-back (placeholder)"),
+                        new Player("Sada Thioub", 11, "Senegal", "Forward", 7, 90, "Wide attacker")
+                };
+            case "montpellier":
+                return new Player[]{
+                        new Player("Geronimo Rulli", 1, "Argentina", "Goalkeeper", 0, 120, "Experienced keeper"),
+                        new Player("Stephy Mavididi", 9, "England", "Forward", 20, 140, "Direct and quick forward"),
+                        new Player("Andy Delort", 11, "Algeria", "Striker", 50, 300, "Strong striker with aerial ability"),
+                        new Player("Teji Savanier", 10, "France", "Midfielder", 30, 260, "Creative set-piece specialist"),
+                        new Player("Vitorino Hilton", 3, "France", "Defender", 5, 700, "Veteran center-back (placeholder)"),
+                        new Player("Pedro Mendes", 8, "Portugal", "Midfielder", 6, 90, "Box-to-box midfielder"),
+                        new Player("Nicolas Cozza", 4, "France", "Defender", 2, 120, "Reliable center-back"),
+                        new Player("Souleymane Camara", 7, "Senegal", "Winger", 10, 300, "Experienced winger"),
+                        new Player("Romain Pitau", 5, "France", "Midfielder", 1, 100, "Defensive midfielder (coach/placeholder)"),
+                        new Player("Keagan Dolly", 17, "South Africa", "Winger", 8, 140, "Attacking wide player")
+                };
+            default:
+                return new Player[]{
+                        new Player("Player 1", 1, "Country", "Goalkeeper", 0, 50, "Key player for " + club),
+                        new Player("Player 2", 2, "Country", "Defender", 2, 60, "Key player for " + club),
+                        new Player("Player 3", 3, "Country", "Defender", 4, 70, "Key player for " + club),
+                        new Player("Player 4", 4, "Country", "Midfielder", 5, 80, "Key player for " + club),
+                        new Player("Player 5", 5, "Country", "Midfielder", 6, 90, "Key player for " + club),
+                        new Player("Player 6", 6, "Country", "Midfielder", 7, 100, "Key player for " + club),
+                        new Player("Player 7", 7, "Country", "Winger", 8, 110, "Key player for " + club),
+                        new Player("Player 8", 8, "Country", "Winger", 9, 120, "Key player for " + club),
+                        new Player("Player 9", 9, "Country", "Striker", 10, 130, "Key player for " + club),
+                        new Player("Player 10", 10, "Country", "Striker", 11, 140, "Key player for " + club)
+                };
+        }
     }
 }
+
