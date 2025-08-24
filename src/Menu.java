@@ -34,7 +34,6 @@ public class Menu {
                     System.out.println("Thank you for using the Football Simulation Program!");
                     return;
                 default:
-
                     System.out.println("Unknown option. Try again.");
             }
         }
@@ -53,20 +52,23 @@ public class Menu {
         List<League> leagues = footballData.getLeagues();
         if (leagues == null || leagues.isEmpty()) {
             System.out.println("No leagues available.");
+            pause();
             return;
         }
 
-        System.out.println("\n=== SELECT A LEAGUE ===");
-        for (int i = 0; i < leagues.size(); i++) {
-            System.out.println((i + 1) + ". " + leagues.get(i).getName());
+        while (true) {
+            System.out.println("\n=== SELECT A LEAGUE ===");
+            for (int i = 0; i < leagues.size(); i++) {
+                System.out.println((i + 1) + ". " + leagues.get(i).getName());
+            }
+            System.out.println("0. Back to Main Menu");
+
+            int choice = getValidIntInput("Select a league: ", 0, leagues.size());
+            if (choice == 0) break; // يرجع للـ Main Menu
+
+            League selectedLeague = leagues.get(choice - 1);
+            browseClubs(selectedLeague);
         }
-        System.out.println("0. Back to Main Menu");
-
-        int choice = getValidIntInput("Select a league: ", 0, leagues.size());
-        if (choice == 0) return;
-
-        League selectedLeague = leagues.get(choice - 1);
-        browseClubs(selectedLeague);
     }
 
     // تصفح الأندية داخل دوري معين
@@ -76,18 +78,21 @@ public class Menu {
         Club[] clubs = league.getClubs();
         if (clubs == null || clubs.length == 0) {
             System.out.println("No clubs available in " + league.getName());
+            pause();
             return;
         }
 
-        System.out.println("\n" + league.getName().toUpperCase());
-        league.displayClubs();
-        System.out.println("0. Back to Leagues");
+        while (true) {
+            System.out.println("\n" + league.getName().toUpperCase());
+            league.displayClubs();
+            System.out.println("0. Back to Leagues");
 
-        int choice = getValidIntInput("Select a club: ", 0, clubs.length);
-        if (choice == 0) return;
+            int choice = getValidIntInput("Select a club: ", 0, clubs.length);
+            if (choice == 0) break; // يرجع لقائمة الدوريات
 
-        Club selectedClub = clubs[choice - 1];
-        browsePlayers(selectedClub);
+            Club selectedClub = clubs[choice - 1];
+            browsePlayers(selectedClub);
+        }
     }
 
     // تصفح اللاعبين داخل نادي
@@ -97,33 +102,35 @@ public class Menu {
         Player[] players = club.getPlayers();
         if (players == null || players.length == 0) {
             System.out.println("No players available for " + club.getName());
+            pause();
             return;
         }
 
-        System.out.println("\n" + club.getName().toUpperCase());
-        club.displayPlayers();
-        System.out.println("0. Back to Clubs");
-        System.out.println("99. View Club Details");
+        while (true) {
+            System.out.println("\n" + club.getName().toUpperCase());
+            club.displayPlayers();
+            System.out.println("0. Back to Clubs");
+            System.out.println("99. View Club Details");
 
-        // specialValue = 99 => لعرض تفاصيل النادي
-        int choice = getValidIntInput("Select a player or view club details: ", 0, players.length, 99);
+            int choice = getValidIntInput("Select a player or view club details: ", 0, players.length, 99);
 
-        if (choice == 0) return;
-        if (choice == 99) {
-            club.displayClubDetails();
-            pause(); // ننتظر المستخدم ليرجع
-            browsePlayers(club); // نعيد عرض قائمة اللاعبين
-            return;
-        }
+            if (choice == 0) break; // يرجع للنوادي
 
-        if (choice >= 1 && choice <= players.length) {
-            Player selectedPlayer = players[choice - 1];
-            selectedPlayer.displayPlayerDetails();
-            pause(); // ننتظر المستخدم قبل العودة
-            browsePlayers(club);
-        } else {
-            // حالة دفاعية - غير متوقعة
-            System.out.println("Invalid selection. Returning to clubs.");
+            if (choice == 99) {
+                club.displayClubDetails();
+                pause();
+                continue; // نعيد عرض قائمة اللاعبين
+            }
+
+            if (choice >= 1 && choice <= players.length) {
+                Player selectedPlayer = players[choice - 1];
+                selectedPlayer.displayPlayerDetails();
+                pause();
+                // بعد قراءة تفاصيل اللاعب نعيد عرض قائمة اللاعبين (loop)
+            } else {
+                System.out.println("Invalid selection. Please try again.");
+                // لا نكسر اللوب هنا؛ نعيد للسؤال
+            }
         }
     }
 
@@ -162,6 +169,7 @@ public class Menu {
 
         if (searchName.isEmpty()) {
             System.out.println("Search query empty.");
+            pause();
             return;
         }
 
@@ -188,6 +196,7 @@ public class Menu {
         if (!found) {
             System.out.println("No players found with name containing: " + searchName);
         }
+        pause();
     }
 
     private void searchClubByName() {
@@ -196,6 +205,7 @@ public class Menu {
 
         if (searchName.isEmpty()) {
             System.out.println("Search query empty.");
+            pause();
             return;
         }
 
@@ -217,6 +227,7 @@ public class Menu {
         if (!found) {
             System.out.println("No clubs found with name containing: " + searchName);
         }
+        pause();
     }
 
     private void searchLeagueByCountry() {
@@ -225,6 +236,7 @@ public class Menu {
 
         if (searchCountry.isEmpty()) {
             System.out.println("Search query empty.");
+            pause();
             return;
         }
 
@@ -242,6 +254,7 @@ public class Menu {
         if (!found) {
             System.out.println("No leagues found in country: " + searchCountry);
         }
+        pause();
     }
 
     // طباعة معلومات البرنامج
@@ -255,6 +268,7 @@ public class Menu {
         System.out.println("- Detailed player statistics and information");
         System.out.println("- Search functionality");
         System.out.println("- User-friendly menu system");
+        pause();
     }
 
     // نُسخ مُريحة من getValidIntInput: بقبول قيمة خاصة (specialValue) حتى لو كانت خارج النطاق
@@ -298,3 +312,5 @@ public class Menu {
         scanner.nextLine();
     }
 }
+
+
