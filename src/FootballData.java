@@ -26,8 +26,9 @@ public class FootballData {
                 new Player("Bernardo Silva", 20, "Portugal", "Midfielder", 40, 220, "Versatile attacking midfielder with great dribbling skills"),
                 new Player("Jack Grealish", 10, "England", "Winger", 20, 80, "Creative winger known for his dribbling and drawing fouls"),
                 new Player("Kyle Walker", 2, "England", "Defender", 8, 200, "Pacey right-back with excellent recovery speed"),
-                new Player("John Stones", 5, "England", "Defender", 12, 180, "Ball-playing defender comfortable in midfield roles")
-        };
+                new Player("John Stones", 5, "England", "Defender", 12, 180, "Ball-playing defender comfortable in midfield roles"),
+                new Player("Stefan Ortega", 18, "Germany", "Goalkeeper", 0, 80, "Reliable backup goalkeeper with excellent shot-stopping and distribution") // added GK
+};
 
         Player[] liverpoolPlayers = {
                 new Player("Mohamed Salah", 11, "Egypt", "Forward", 150, 250, "Prolific goalscorer with exceptional speed and finishing"),
@@ -39,8 +40,9 @@ public class FootballData {
                 new Player("Andy Robertson", 26, "Scotland", "Defender", 8, 220, "Attacking left-back with great crossing ability"),
                 new Player("Cody Gakpo", 18, "Netherlands", "Forward", 15, 50, "Versatile forward with technical quality"),
                 new Player("Ibrahima Konate", 5, "France", "Defender", 2, 60, "Powerful and pacey center-back"),
-                new Player("Dominik Szoboszlai", 8, "Hungary", "Midfielder", 10, 40, "Creative midfielder with excellent shooting range")
-        };
+                new Player("Dominik Szoboszlai", 8, "Hungary", "Midfielder", 10, 40, "Creative midfielder with excellent shooting range"),
+                new Player("Caoimhín Kelleher", 62, "Ireland", "Goalkeeper", 0, 60, "Agile backup goalkeeper known for quick reflexes and penalty saves") // added GK
+};
 
         Player[] arsenalPlayers = {
                 new Player("Bukayo Saka", 7, "England", "Winger", 45, 180, "Academy product with exceptional dribbling and creativity"),
@@ -52,8 +54,9 @@ public class FootballData {
                 new Player("Ben White", 4, "England", "Defender", 2, 90, "Versatile defender comfortable at right-back or center-back"),
                 new Player("Aaron Ramsdale", 1, "England", "Goalkeeper", 0, 100, "Athletic goalkeeper with good distribution"),
                 new Player("Kai Havertz", 29, "Germany", "Midfielder", 20, 150, "Versatile attacking midfielder with technical quality"),
-                new Player("Oleksandr Zinchenko", 35, "Ukraine", "Defender", 5, 120, "Inverted left-back with excellent passing range")
-        };
+                new Player("Oleksandr Zinchenko", 35, "Ukraine", "Defender", 5, 120, "Inverted left-back with excellent passing range"),
+                new Player("David Raya", 22, "Spain", "Goalkeeper", 0, 40, "Ball-playing goalkeeper with excellent distribution and command of area") // added GK
+};
 
         Player[] chelseaPlayers = {
                 new Player("Enzo Fernandez", 8, "Argentina", "Midfielder", 5, 40, "World Cup winner with excellent passing range"),
@@ -65,8 +68,9 @@ public class FootballData {
                 new Player("Conor Gallagher", 23, "England", "Midfielder", 10, 100, "Energetic box-to-box midfielder"),
                 new Player("Moisés Caicedo", 25, "Ecuador", "Midfielder", 3, 80, "Defensive midfielder with strong tackling"),
                 new Player("Levi Colwill", 26, "England", "Defender", 1, 40, "Young center-back with excellent potential"),
-                new Player("Robert Sánchez", 1, "Spain", "Goalkeeper", 0, 120, "Athletic goalkeeper with good shot-stopping")
-        };
+                new Player("Robert Sánchez", 1, "Spain", "Goalkeeper", 0, 120, "Athletic goalkeeper with good shot-stopping"),
+                new Player("Djordje Petrović", 28, "Serbia", "Goalkeeper", 0, 30, "Shot-stopper with strong reflexes and good handling") // added GK
+};
 
         Player[] manUnitedPlayers = {
                 new Player("Bruno Fernandes", 8, "Portugal", "Midfielder", 60, 180, "Creative captain with excellent passing and shooting"),
@@ -78,8 +82,9 @@ public class FootballData {
                 new Player("Mason Mount", 7, "England", "Midfielder", 30, 200, "Creative midfielder with good work rate"),
                 new Player("Lisandro Martinez", 6, "Argentina", "Defender", 3, 100, "Aggressive defender with good passing"),
                 new Player("Antony", 21, "Brazil", "Winger", 15, 80, "Skilled winger with good dribbling ability"),
-                new Player("Diogo Dalot", 20, "Portugal", "Defender", 5, 150, "Attacking right-back with good crossing")
-        };
+                new Player("Diogo Dalot", 20, "Portugal", "Defender", 5, 150, "Attacking right-back with good crossing"),
+                new Player("Tom Heaton", 22, "England", "Goalkeeper", 0, 50, "Veteran goalkeeper providing leadership and stability") // added GK
+};
 
         Player[] tottenhamPlayers = {
                 new Player("Son Heung-min", 7, "South Korea", "Forward", 120, 300, "Prolific goalscorer with excellent finishing"),
@@ -91,8 +96,9 @@ public class FootballData {
                 new Player("Richarlison", 9, "Brazil", "Forward", 60, 200, "Versatile forward with good aerial ability"),
                 new Player("Pedro Porro", 23, "Spain", "Defender", 10, 120, "Attacking right-back with excellent crossing"),
                 new Player("Micky van de Ven", 37, "Netherlands", "Defender", 2, 40, "Pacey center-back with good recovery speed"),
-                new Player("Pape Matar Sarr", 29, "Senegal", "Midfielder", 4, 60, "Energetic midfielder with good potential")
-        };
+                new Player("Pape Matar Sarr", 29, "Senegal", "Midfielder", 4, 60, "Energetic midfielder with good potential"),
+                new Player("Fraser Forster", 20, "England", "Goalkeeper", 0, 80, "Experienced goalkeeper with commanding presence") // added GK
+};
 
         Player[] newcastlePlayers = {
                 new Player("Bruno Guimaraes", 39, "Brazil", "Midfielder", 15, 100, "Complete midfielder with excellent technique"),
@@ -104,8 +110,9 @@ public class FootballData {
                 new Player("Joelinton", 7, "Brazil", "Midfielder", 20, 150, "Powerful midfielder with good physical presence"),
                 new Player("Callum Wilson", 9, "England", "Striker", 80, 250, "Clinical striker with good movement"),
                 new Player("Harvey Barnes", 15, "England", "Winger", 40, 200, "Pacey winger with good finishing"),
-                new Player("Fabian Schar", 5, "Switzerland", "Defender", 10, 300, "Experienced defender with good passing")
-        };
+                new Player("Fabian Schar", 5, "Switzerland", "Defender", 10, 300, "Experienced defender with good passing"),
+                new Player("Martin Dúbravka", 1, "Slovakia", "Goalkeeper", 0, 120, "Dependable backup keeper with command of area and penalty experience") // added GK
+};
 
         Player[] astonVillaPlayers = {
                 new Player("Ollie Watkins", 11, "England", "Striker", 70, 200, "Pacey striker with good movement and finishing"),
@@ -117,8 +124,9 @@ public class FootballData {
                 new Player("Moussa Diaby", 19, "France", "Winger", 25, 100, "Skilled winger with excellent pace"),
                 new Player("Ezri Konsa", 4, "England", "Defender", 5, 180, "Reliable defender with good positioning"),
                 new Player("Boubacar Kamara", 44, "France", "Midfielder", 3, 100, "Defensive midfielder with strong tackling"),
-                new Player("Matty Cash", 2, "Poland", "Defender", 10, 150, "Attacking right-back with good crossing")
-        };
+                new Player("Matty Cash", 2, "Poland", "Defender", 10, 150, "Attacking right-back with good crossing"),
+                new Player("Robin Olsen", 25, "Sweden", "Goalkeeper", 0, 70, "Tall goalkeeper with good positioning and experience") // added GK
+};
 
         Player[] brightonPlayers = {
                 new Player("Pascal Gross", 13, "Germany", "Midfielder", 40, 250, "Versatile midfielder with excellent creativity"),
@@ -130,8 +138,9 @@ public class FootballData {
                 new Player("Joao Pedro", 9, "Brazil", "Forward", 15, 50, "Versatile forward with good technical ability"),
                 new Player("Billy Gilmour", 11, "Scotland", "Midfielder", 2, 80, "Technical midfielder with good passing"),
                 new Player("Tariq Lamptey", 2, "Ghana", "Defender", 5, 100, "Pacey right-back with good attacking ability"),
-                new Player("Jason Steele", 23, "England", "Goalkeeper", 0, 150, "Reliable goalkeeper with good distribution")
-        };
+                new Player("Jason Steele", 23, "England", "Goalkeeper", 0, 150, "Reliable goalkeeper with good distribution"),
+                new Player("Bart Verbruggen", 1, "Netherlands", "Goalkeeper", 0, 20, "Young goalkeeper with excellent reflexes and distribution") // added GK
+};
 
         Player[] westHamPlayers = {
                 new Player("Jarrod Bowen", 20, "England", "Forward", 60, 200, "Versatile forward with excellent work rate"),
@@ -143,8 +152,9 @@ public class FootballData {
                 new Player("Nayef Aguerd", 27, "Morocco", "Defender", 5, 80, "Composed defender with good passing"),
                 new Player("Alphonse Areola", 13, "France", "Goalkeeper", 0, 200, "Athletic goalkeeper with good reflexes"),
                 new Player("Michail Antonio", 9, "Jamaica", "Striker", 70, 300, "Physical striker with good hold-up play"),
-                new Player("James Ward-Prowse", 7, "England", "Midfielder", 50, 350, "Set-piece specialist with excellent passing")
-        };
+                new Player("James Ward-Prowse", 7, "England", "Midfielder", 50, 350, "Set-piece specialist with excellent passing"),
+                new Player("Łukasz Fabiański", 1, "Poland", "Goalkeeper", 0, 200, "Experienced goalkeeper who brings leadership and calm under pressure") // added GK
+};
 
         Club[] premierLeagueClubs = {
                 new Club("Manchester City", 1880, "Pep Guardiola", "Manuel Pellegrini", "Etihad Stadium", manCityPlayers),
@@ -172,8 +182,9 @@ public class FootballData {
                 new Player("Eder Militao", 3, "Brazil", "Defender", 8, 150, "Athletic defender with good recovery speed"),
                 new Player("Dani Carvajal", 2, "Spain", "Defender", 10, 400, "Experienced right-back with good crossing"),
                 new Player("Thibaut Courtois", 1, "Belgium", "Goalkeeper", 0, 350, "World-class goalkeeper with excellent shot-stopping"),
-                new Player("Antonio Rudiger", 22, "Germany", "Defender", 12, 300, "Physical defender with strong tackling")
-        };
+                new Player("Antonio Rudiger", 22, "Germany", "Defender", 12, 300, "Physical defender with strong tackling"),
+                new Player("Andriy Lunin", 13, "Ukraine", "Goalkeeper", 0, 60, "Young, agile backup goalkeeper with good distribution") // added GK
+};
 
         // La Liga - Barcelona Players
         Player[] barcelonaPlayers = {
@@ -186,8 +197,9 @@ public class FootballData {
                 new Player("Joao Cancelo", 2, "Portugal", "Defender", 15, 250, "Versatile full-back with excellent attacking skills"),
                 new Player("Marc-Andre ter Stegen", 1, "Germany", "Goalkeeper", 0, 350, "Modern goalkeeper with excellent distribution"),
                 new Player("Ferran Torres", 7, "Spain", "Forward", 40, 150, "Versatile forward with good movement"),
-                new Player("Alejandro Balde", 3, "Spain", "Defender", 2, 80, "Pacey left-back with good attacking potential")
-        };
+                new Player("Alejandro Balde", 3, "Spain", "Defender", 2, 80, "Pacey left-back with good attacking potential"),
+                new Player("Iñaki Peña", 25, "Spain", "Goalkeeper", 0, 60, "Backup goalkeeper with good handling and distribution skills") // added GK
+};
 
         // Continue with other La Liga clubs...
         Club[] laLigaClubs = {
@@ -216,8 +228,9 @@ public class FootballData {
                 new Player("Alphonso Davies", 19, "Canada", "Defender", 15, 150, "Pacey left-back with excellent attacking ability"),
                 new Player("Dayot Upamecano", 2, "France", "Defender", 8, 200, "Physical defender with good recovery speed"),
                 new Player("Leon Goretzka", 8, "Germany", "Midfielder", 35, 300, "Box-to-box midfielder with good physical presence"),
-                new Player("Kingsley Coman", 11, "France", "Winger", 60, 250, "Skilled winger with excellent pace and dribbling")
-        };
+                new Player("Kingsley Coman", 11, "France", "Winger", 60, 250, "Skilled winger with excellent pace and dribbling"),
+                new Player("Sven Ulreich", 26, "Germany", "Goalkeeper", 0, 120, "Experienced backup goalkeeper known for reliability when called upon") // added GK
+};
 
         // Continue with other Bundesliga clubs...
         Club[] bundesligaClubs = {
@@ -246,8 +259,9 @@ public class FootballData {
                 new Player("Henrikh Mkhitaryan", 22, "Armenia", "Midfielder", 70, 400, "Experienced midfielder with good creativity"),
                 new Player("Benjamin Pavard", 28, "France", "Defender", 10, 200, "Versatile defender with good technical ability"),
                 new Player("Yann Sommer", 1, "Switzerland", "Goalkeeper", 0, 300, "Experienced goalkeeper with good reflexes"),
-                new Player("Francesco Acerbi", 15, "Italy", "Defender", 20, 400, "Veteran defender with excellent positioning")
-        };
+                new Player("Francesco Acerbi", 15, "Italy", "Defender", 20, 400, "Veteran defender with excellent positioning"),
+                new Player("Emil Audero", 77, "Italy", "Goalkeeper", 0, 30, "Dependable backup with good reflexes") // added GK
+};
 
         // Continue with other Serie A clubs...
         Club[] serieAClubs = {
@@ -276,8 +290,9 @@ public class FootballData {
                 new Player("Warren Zaire-Emery", 33, "France", "Midfielder", 5, 30, "Young midfielder with exceptional potential"),
                 new Player("Lucas Hernandez", 21, "France", "Defender", 8, 200, "Versatile defender with good technical ability"),
                 new Player("Randal Kolo Muani", 23, "France", "Forward", 30, 100, "Pacey forward with good movement"),
-                new Player("Manuel Ugarte", 4, "Uruguay", "Midfielder", 2, 80, "Defensive midfielder with strong tackling")
-        };
+                new Player("Manuel Ugarte", 4, "Uruguay", "Midfielder", 2, 80, "Defensive midfielder with strong tackling"),
+                new Player("Keylor Navas", 1, "Costa Rica", "Goalkeeper", 0, 350, "Veteran international goalkeeper with elite shot-stopping") // added GK
+};
 
         // Continue with other Ligue 1 clubs...
         Club[] ligue1Clubs = {
@@ -295,11 +310,6 @@ public class FootballData {
 
         leagues.add(new League("Ligue 1", 1933, "France", 20, ligue1Clubs));
     }
-
-    // -----------------------------
-    // Helper factories for missing clubs (return 10 real-ish players per club)
-    // -----------------------------
-
     private Player[] createLaLigaPlayers(String club) {
         if (club == null) club = "";
         switch (club.toLowerCase()) {
@@ -844,4 +854,5 @@ public class FootballData {
         }
     }
 }
+
 
